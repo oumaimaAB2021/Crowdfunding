@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" stylesheets="@projet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Projet.ProjetController">
+    <children>
+      <Pane fx:id="paneLeft" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="252.0" styleClass="paneLeft" stylesheets="@projet.css" />
+      <HBox layoutX="300.0" layoutY="120.0" minWidth="-Infinity" prefHeight="50.0" prefWidth="566.0" spacing="40.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <JFXTextField fx:id="NomProjet" focusColor="#009688" labelFloat="true" prefHeight="26.0" prefWidth="250.0" promptText="Nom du projet">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXComboBox fx:id="CatégorieProjet" focusColor="#009688" prefHeight="28.0" prefWidth="250.0" promptText="Catégorie" />
+         </children>
+      </HBox>
+      <HBox layoutX="300.0" layoutY="425.0" minWidth="-Infinity" prefHeight="50.0" prefWidth="566.0" spacing="40.0">
+         <children>
+            <JFXTextField fx:id="Budget" focusColor="#009688" labelFloat="true" prefHeight="26.0" prefWidth="250.0" promptText="Budget*(en DH)">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXComboBox fx:id="TypeFinancement" focusColor="#009688" prefHeight="28.0" prefWidth="250.0" promptText="Type de financement" />
+         </children>
+      </HBox>
+      <HBox layoutX="305.0" layoutY="180.0" minWidth="-Infinity" prefHeight="50.0" prefWidth="566.0" spacing="40.0">
+         <children>
+            <JFXComboBox fx:id="Statut" focusColor="#009688" prefHeight="28.0" prefWidth="250.0" promptText="Porteur du projet" />
+            <JFXDatePicker fx:id="DateCréation" prefHeight="32.0" prefWidth="255.0" promptText="Date de création" />
+         </children>
+      </HBox>
+      <JFXTextArea fx:id="DescriptionProjet" focusColor="#009688" labelFloat="true" layoutX="306.0" layoutY="244.0" prefHeight="92.0" prefWidth="340.0" promptText="Description du projet" text="&#10;" />
+      <HBox layoutX="300.0" layoutY="537.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="566.0" spacing="50.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="102.0" text="Contrepartie:">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <JFXRadioButton fx:id="ContrepartieConcret" text="Concret">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Contrepartie" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="ContrepartieSymb" text="Symbolique" toggleGroup="$Contrepartie">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="PasContrepartie" text="Pas de contrepartie" toggleGroup="$Contrepartie">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </JFXRadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="252.0" layoutY="44.0" prefHeight="25.0" prefWidth="696.0">
+         <children>
+            <Separator halignment="LEFT" opacity="0.95" prefHeight="25.0" prefWidth="280.0" />
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="228.0" styleClass="LabelSeparator" text="Informations sur le projet" />
+            <Separator halignment="RIGHT" opacity="0.95" prefHeight="25.0" prefWidth="280.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="252.0" layoutY="370.0" prefHeight="25.0" prefWidth="696.0">
+         <children>
+            <Separator halignment="LEFT" opacity="0.95" prefHeight="25.0" prefWidth="280.0" />
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="150.0" styleClass="LabelSeparator" text="Financement" />
+            <Separator halignment="RIGHT" opacity="0.95" prefHeight="25.0" prefWidth="280.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="482.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="566.0" spacing="80.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="158.0" text="Moyen de paiement:">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <JFXCheckBox fx:id="PaiementCarte" alignment="CENTER" checkedColor="#009688" text="Carte" />
+            <JFXCheckBox fx:id="PaiementEspece" alignment="CENTER" checkedColor="#009688" text="Espèce" />
+            <JFXCheckBox fx:id="PaiementChéque" alignment="CENTER" checkedColor="#009688" text="Chéque" />
+         </children>
+      </HBox>
+      <Button fx:id="EnregistrerProjet" layoutX="788.0" layoutY="614.0" mnemonicParsing="false" onAction="#AjouterProjet" text="Enregistrer" />
+      <JFXButton fx:id="ImageProjet" buttonType="RAISED" layoutX="299.0" layoutY="611.0" onAction="#AjouterImage" prefHeight="32.0" prefWidth="187.0" text="Joindre une image" textAlignment="CENTER" />
+      <ImageView fx:id="ImageView" fitHeight="123.0" fitWidth="207.0" layoutX="671.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIconView fx:id="close" fill="#009688" glyphName="CLOSE" layoutX="919.0" layoutY="29.0" onMouseClicked="#close" size="1.5em" smooth="false" styleClass="icon" text="" textAlignment="RIGHT" />
+      <ImageView fitHeight="249.0" fitWidth="185.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      
+    </children>
+</AnchorPane>

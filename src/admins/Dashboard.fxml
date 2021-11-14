@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admins.DashboardController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="139.0" prefWidth="950.0" styleClass="paneTop" stylesheets="@projet.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+         <children>
+            <Label layoutX="87.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="203.0" layoutY="88.0" text="GrowMoney" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="btnRechercher" focusTraversable="false" layoutX="652.0" layoutY="87.0" onAction="#Rechercher" prefHeight="32.0" prefWidth="259.0" promptText="Rechercher (par nom du projet)" style="-fx-border-color: white; -fx-border-radius: 2em; -fx-background-color: transparent; -fx-text-fill: white;">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="877.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_Search_52px.png" />
+               </image>
+            </ImageView>
+            <FontAwesomeIconView fill="WHITE" glyphName="DASHBOARD" layoutX="50.0" layoutY="75.0" size="30" />
+            <FontAwesomeIconView fx:id="close" fill="#fffdfd" glyphName="CLOSE" layoutX="911.0" layoutY="29.0" onMouseClicked="#close" size="1.5em" smooth="false" styleClass="icon" text="" textAlignment="RIGHT" />
+            <ImageView fitHeight="77.0" fitWidth="69.0" layoutX="836.0" layoutY="10.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logoTab.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <GridPane hgap="15.0" layoutX="45.0" layoutY="158.0" prefHeight="103.0" prefWidth="869.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="158.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #009688; -fx-background-radius: 1em;">
+               <children>
+                  <Label alignment="CENTER" layoutX="46.0" layoutY="67.0" text="Nombre des projets" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNbrProjet" alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="25.0" prefHeight="53.0" prefWidth="114.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #4682B4; -fx-background-radius: 1em;" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="36.0" layoutY="69.0" text="Nombre des financeurs" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNbrFinanceurs" alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="25.0" prefHeight="53.0" prefWidth="133.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+               <children>
+                  <Label layoutX="62.0" layoutY="70.0" text="Projets financés" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblProjetfinancés" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="25.0" prefHeight="53.0" prefWidth="114.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="42.0" layoutY="84.0" size="20" />
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #D7534E; -fx-background-radius: 1em;" GridPane.columnIndex="3">
+               <children>
+                  <Label layoutX="60.0" layoutY="69.0" text="Projets  restants" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblProjetRestants" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="25.0" prefHeight="53.0" prefWidth="114.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="WHITE" glyphName="WARNING" layoutX="32.0" layoutY="84.0" size="20" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <SplitPane dividerPositions="0.6874279123414071" layoutX="42.0" layoutY="299.0" prefHeight="287.0" prefWidth="869.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="299.0">
+         <items>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <PieChart fx:id="pieChart" prefHeight="287.0" prefWidth="278.0" style="-fx-background-color: #fff;" stylesheets="@projet.css" />
+               </children>
+            </GridPane>
+            <VBox prefHeight="285.0" prefWidth="283.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: #009688;" text="Bénificiéaire" textFill="#fcfcfcfc">
+                     <font>
+                        <Font name="Bodoni MT Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <StackPane VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: #009688;" styleClass="labelCercle" stylesheets="@projet.css" text="Bénificiares">
+                           <StackPane.margin>
+                              <Insets top="60.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LblBénifi" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="76.0" textAlignment="CENTER" textFill="#0d0000">
+                           <font>
+                              <Font name="Arial Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Circle fill="#1f93ff06" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </StackPane>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

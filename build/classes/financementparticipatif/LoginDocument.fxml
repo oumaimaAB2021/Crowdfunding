@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="662.0" prefWidth="557.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financementparticipatif.LoginDocumentController">
+    <children>
+      <ImageView fitHeight="199.0" fitWidth="562.0" layoutY="-1.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../images/A.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="106.0" layoutX="230.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/unnamed.png" />
+         </image>
+      </ImageView>
+      <FontAwesomeIconView fx:id="close" fill="#f1f6ff" glyphName="CLOSE" layoutX="543.0" layoutY="18.0" onMouseClicked="#close" />
+      <Pane layoutX="84.0" layoutY="294.0" prefHeight="310.0" prefWidth="394.0" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
+         <children>
+            <TextField fx:id="txtEmail" layoutX="75.0" layoutY="31.0" prefHeight="46.0" prefWidth="280.0" promptText="Email" />
+            <PasswordField fx:id="txtMotdepasse" layoutX="75.0" layoutY="107.0" prefHeight="46.0" prefWidth="280.0" promptText="Mot de passe" />
+            <Button fx:id="btnConnecter" alignment="CENTER" layoutX="95.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="205.0" text="Se connecter" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" />
+            <FontAwesomeIconView fill="#039ed3" glyphName="ENVELOPE" layoutX="41.0" layoutY="64.0" size="25" wrappingWidth="27.911458015441895" />
+            <FontAwesomeIconView fill="#039ed3" glyphName="LOCK" layoutX="41.0" layoutY="142.0" size="35" text="" wrappingWidth="27.911464273929596" />
+            <HBox layoutX="79.0" layoutY="216.0" prefHeight="32.0" prefWidth="237.0" spacing="50.0">
+               <children>
+                  <RadioButton fx:id="btnClient" lineSpacing="20.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Client">
+                     <padding>
+                        <Insets left="28.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="statuts" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="btnadmin" lineSpacing="40.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Administrateur" toggleGroup="$statuts" />
+               </children>
+            </HBox>
+            <JFXButton fx:id="passwordForget" layoutX="215.0" layoutY="171.0" onMouseClicked="#recoverPassword" opacity="0.6" styleClass="buttonCliqued" stylesheets="@style.css" text="Mot de passe oublié?" textFill="#053bdd" underline="true" />
+            <JFXTextField fx:id="btnErreur" editable="false" focusColor="#8d8e8f00" layoutX="75.0" layoutY="153.0" prefHeight="30.0" prefWidth="178.0" styleClass="TextError" stylesheets="@style.css" unFocusColor="#00000001">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </Pane>
+      <Pane layoutX="158.0" layoutY="616.0" prefHeight="36.0" prefWidth="237.0">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" opacity="0.6" styleClass="buttonCliqued" stylesheets="@style.css" text="Vous n'avez pas de compte?" textFill="#053bdd" underline="true" />
+            <JFXButton fx:id="btn" layoutX="161.0" layoutY="2.0" onAction="#handleButtonAction" opacity="0.72" styleClass="buttonCliqued" stylesheets="@style.css" text="  Créez un !" textFill="#053bdd" underline="true" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="141.0" fitWidth="135.0" layoutX="427.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

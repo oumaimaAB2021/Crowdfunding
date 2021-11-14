@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admins.TableFinanceurController">
+   <children>
+      <TableView fx:id="TableView" layoutX="25.0" layoutY="126.0" prefHeight="574.0" prefWidth="1013.0" styleClass="TableView" stylesheets="@projet.css" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="5.0">
+        <columns>
+          <TableColumn fx:id="colName" editable="false" prefWidth="230.0" sortable="false" text="Nom" />
+          <TableColumn fx:id="colDate" editable="false" prefWidth="46.0" style="-fx-alignement: center;" text="Date de naissance" />
+            <TableColumn fx:id="colCin" editable="false" minWidth="8.0" prefWidth="106.0" sortable="false" text="Cin" />
+            <TableColumn fx:id="colTel" editable="false" minWidth="0.0" prefWidth="102.0" sortable="false" text="Tel" />
+            <TableColumn fx:id="colEmail" editable="false" prefWidth="180.0" sortable="false" text="Email" />
+            <TableColumn fx:id="colProjet" editable="false" prefWidth="182.0" sortable="false" text="Nombre de Projet" />
+            <TableColumn fx:id="colAdresse" editable="false" prefWidth="133.0" sortable="false" text="Adresse" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         
+      </TableView>
+      <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1043.0" styleClass="paneLeft" stylesheets="@projet.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="86.0" layoutY="33.0" text="GrowMoney" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="80.0" text="Mes Financeurs" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fx:id="close" fill="#fffdfd" glyphName="CLOSE" layoutX="975.0" layoutY="21.0" onMouseClicked="#close" size="1.5em" smooth="false" styleClass="icon" text="" textAlignment="RIGHT" />
+            <FontAwesomeIconView fx:id="pleinEcran" fill="WHITE" glyphName="CIRCLE" layoutX="948.0" layoutY="21.0" onMouseClicked="#max" size="1.2em" smooth="false" styleClass="icon" />
+            <FontAwesomeIconView fx:id="MINUS" fill="WHITE" glyphName="MINUS" layoutX="924.0" layoutY="21.0" onMouseClicked="#min" size="1.2em" smooth="false" styleClass="icon" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="99.0" fitWidth="75.0" layoutX="21.0" layoutY="7.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/logoTab.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,135 @@
+.paneLeft{
+    -fx-background-color: linear-gradient(to right bottom,#051937,#00E3AC);
+    
+}
+.PaneSplash{
+    -fx-background-color: linear-gradient(to right bottom,#051937,#00E3AC);
+}
+.LabelSeparator{
+    -fx-text-fill: #009688;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    
+
+}
+.labelSplash{
+    
+   
+    -fx-font-size: 46px;
+    -fx-font-family: "Brush Script MT";
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    
+}
+
+.menuBar:hover{
+    -fx-border-color: #009688;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.Labelwelcome:hover{
+    -fx-font-size: 37px;
+    -fx-font-family: "Brush Script MT";
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+     -fx-alignment: center;
+     -fx-text-fill:black;
+}
+.Labelwelcome{
+    -fx-font-size: 37px;
+    -fx-font-family: "Brush Script MT";
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+     -fx-alignment: center;
+     -fx-text-fill:#009688;
+}
+
+.labelVProjet{
+    -fx-text-fill: #4981af;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-font-family: "Brush Script MT";
+    
+
+}
+
+
+
+.TextVisualiser{
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-font-family: "Times New Roman";
+}
+.LabelBrush{
+     -fx-font-size: 16px;
+    -fx-font-family: "Times New Roman";
+    -fx-font-style: italic;
+    -fx-text-fill: #4981af;
+    -fx-font-weight:bold;
+}
+#contribue{
+    
+   
+    -fx-background-radius: 6,5;
+    -fx-background-insets: 0,1;
+    -fx-text-fill: black;
+    -fx-font-weight:bold;
+    -fx-font-size: 18px;
+
+}
+  
+.icon:hover{
+    -fx-cursor: hand;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-cell-size : 20;
+    -fx-background-color:#009688;
+}
+.table-view .column-header .label{
+
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+   -fx-alignment: CENTER_LEFT;
+}
+.table-view .cell{
+   -fx-cell-size: 30;
+  -fx-alignment: center-left;
+  -fx-text-fill: #000000;
+  -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell:selected {
+    -fx-background-color:  rgb(127, 172, 243);
+ }
+ .table-row-cell:selected .text {
+        -fx-fill : white ;
+ 
+ }
+ .paneTop{
+       -fx-background-color: linear-gradient(to right bottom,#00E3AC,#051937);
+ }
+ /* chart properties */
+
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: true;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}
+.labelCercle{
+     -fx-font-weight: bold;
+    -fx-font-family: "calibri";
+    -fx-font-size:18px;
+    -fx-alignment:center;
+    -fx-text-fill: #009688;
+}

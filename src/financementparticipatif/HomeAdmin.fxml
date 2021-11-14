@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="618.0" prefWidth="934.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financementparticipatif.HomeAdminController">
+   <children>
+      <GridPane hgap="10.0" layoutX="165.0" layoutY="124.0" prefHeight="426.0" prefWidth="684.0" vgap="10.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="228.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnExplorer" contentDisplay="TOP" mnemonicParsing="false" onAction="#TableProjets" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text="Projets" GridPane.columnIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688eb" glyphName="LIST" size="50" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnlanceur" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text="Créateurs" GridPane.rowIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688" glyphName="USER" size="50" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnValider" contentDisplay="TOP" mnemonicParsing="false" onAction="#Valider" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text=" Valider projets" GridPane.columnIndex="2">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688" glyphName="CHECK" size="50" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnDéconnecter" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#close" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text="Se Déconnecter" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688" glyphName="COG" size="50" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnFinanceur" contentDisplay="TOP" mnemonicParsing="false" onAction="#ExplorerFinanceur" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text="Financeurs" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688" glyphName="USERS" size="50" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnDashboard" contentDisplay="TOP" mnemonicParsing="false" onAction="#ViewDashboard" prefHeight="181.0" prefWidth="242.0" styleClass="GridBtn" stylesheets="@style.css" text="Dashboard">
+               <graphic>
+                  <FontAwesomeIconView fill="#009688" glyphName="HOME" size="50" />
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <Pane layoutX="-1.0" prefHeight="173.0" prefWidth="980.0" styleClass="paneLeft" stylesheets="@../Projet/projet.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="101.0" layoutY="61.0" text="GrowMoney" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="141.0" fitWidth="98.0" layoutX="21.0" layoutY="7.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logoTab.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </children>
+</AnchorPane>

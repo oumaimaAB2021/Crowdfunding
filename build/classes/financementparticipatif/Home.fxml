@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="670.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financementparticipatif.HomeController">
+   <children>
+      <Pane fx:id="paneLeft" layoutX="-6.0" prefHeight="670.0" prefWidth="266.0" styleClass="paneLeft">
+         <stylesheets>
+            <URL value="@style.css" />
+            <URL value="@../Projet/projet.css" />
+         </stylesheets>
+         <children>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutX="20.0" layoutY="265.0" prefHeight="144.0" prefWidth="240.0" styleClass="labelleft" stylesheets="@style.css" text="Partout dans le monde, des gens lancent des projets pour aider les autres." unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextArea>
+            <ImageView fitHeight="249.0" fitWidth="185.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" layoutX="260.0" prefHeight="60.0" prefWidth="1047.0" spacing="20.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXComboBox fx:id="btnCat" focusColor="#405aa80a" focusTraversable="false" onAction="#TableProjetsCatégorie" prefHeight="60.0" prefWidth="185.0" promptText="Catégories" styleClass="menuBar" stylesheets="@../Projet/projet.css" unFocusColor="#425ba600">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </JFXComboBox>
+            <HBox alignment="CENTER_LEFT" minWidth="-Infinity">
+               <children>
+                  <FontAwesomeIconView glyphName="SEARCH" size="15" />
+                  <JFXTextField fx:id="btnRechercher" focusColor="#405aa802" onAction="#Rechercher" prefHeight="64.0" prefWidth="175.0" promptText=" Rechercher (Par nom du projet)" styleClass="menuBar" stylesheets="@../Projet/projet.css" unFocusColor="#4d4d4d60" />
+               </children></HBox>
+            <JFXButton fx:id="btnExplorer" onAction="#TableProjets" prefHeight="60.0" prefWidth="157.0" styleClass="menuBar" stylesheets="@../Projet/projet.css" text="Explorer les projets">
+               <graphic>
+                  <FontAwesomeIconView glyphName="LIST" size="15" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnLancer" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="157.0" styleClass="menuBar" stylesheets="@../Projet/projet.css" text="Lancer un projet">
+               <graphic>
+                  <FontAwesomeIconView glyphName="DOWNLOAD" size="15" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnDéconnecter" onMouseClicked="#close" prefHeight="60.0" prefWidth="191.0" styleClass="menuBar" stylesheets="@../Projet/projet.css" text="Se Déconnecter">
+               <graphic>
+                  <FontAwesomeIconView glyphName="COG" size="15" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="260.0" layoutY="60.0" prefHeight="610.0" prefWidth="1047.0">
+         <content>
+            <AnchorPane layoutY="60.0" prefHeight="400.0" prefWidth="1032.0">
+               <children>
+                  <HBox layoutX="30.0" layoutY="40.0" prefHeight="225.0" prefWidth="435.0" style="-fx-background-color: white;" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <VBox prefHeight="183.0" prefWidth="200.0">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <ImageView fx:id="image1" fitHeight="155.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="160.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#009688" glyphName="MONEY" size="18">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <JFXTextField fx:id="text1" editable="false" focusColor="#405aa800" prefHeight="25.0" prefWidth="116.0" unFocusColor="#4d4d4d00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font></JFXTextField>
+                                    <JFXButton fx:id="btnExplorer1" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" onAction="#ExplorerProjet" prefHeight="25.0" prefWidth="120.0" text="Visualiser" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="EYE" size="15" text="" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <JFXTextArea fx:id="desc1" editable="false" focusColor="#405aa800" prefHeight="190.0" prefWidth="200.0" styleClass="txtArea" stylesheets="@style.css" unFocusColor="#4d4d4d06">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin></JFXTextArea>
+                     </children></HBox>
+                  <HBox layoutX="30.0" layoutY="300.0" prefHeight="225.0" prefWidth="450.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="568.0">
+                     <children>
+                        <VBox prefHeight="183.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="image3" fitHeight="155.0" fitWidth="200.0" pickOnBounds="true" />
+                              <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="160.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#009688" glyphName="MONEY" size="18">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <JFXTextField fx:id="text3" editable="false" focusColor="#405aa800" prefHeight="25.0" prefWidth="116.0" unFocusColor="#4d4d4d00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font></JFXTextField>
+                                    <JFXButton fx:id="btnExplorer3" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" onAction="#ExplorerProjet" prefHeight="25.0" prefWidth="120.0" text="Visualiser" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="EYE" size="15" text="" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <JFXTextArea fx:id="desc3" editable="false" focusColor="#415aa602" prefHeight="190.0" prefWidth="200.0" styleClass="txtArea" stylesheets="@style.css" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin></JFXTextArea>
+                     </children></HBox>
+                  <HBox layoutX="560.0" layoutY="40.0" prefHeight="225.0" prefWidth="450.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <VBox prefHeight="183.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="image2" fitHeight="155.0" fitWidth="200.0" pickOnBounds="true" />
+                              <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="160.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#009688" glyphName="MONEY" size="18">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <JFXTextField fx:id="text2" editable="false" focusColor="#405aa800" prefHeight="25.0" prefWidth="116.0" unFocusColor="#4d4d4d00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font></JFXTextField>
+                                    <JFXButton fx:id="btnExplorer2" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" onAction="#ExplorerProjet" prefHeight="25.0" prefWidth="135.0" text="Visualiser" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="EYE" size="15" text="" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <JFXTextArea fx:id="desc2" editable="false" focusColor="#405aa800" prefHeight="190.0" prefWidth="200.0" styleClass="txtArea" stylesheets="@style.css" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin></JFXTextArea>
+                     </children></HBox>
+                  <HBox layoutX="33.0" layoutY="570.0" prefHeight="272.0" prefWidth="986.0" spacing="65.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <VBox prefHeight="294.0" prefWidth="262.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: #4682B4;" text="Total project" textFill="#fcfcfcfc">
+                                 <font>
+                                    <Font name="Bodoni MT Black" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Circle fill="#1f93ff06" radius="63.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label styleClass="labelCercle" stylesheets="@style.css" text="Projets">
+                                       <StackPane.margin>
+                                          <Insets top="60.0" />
+                                       </StackPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="labelprojet" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="54.13671875">
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </StackPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="40.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="294.0" prefWidth="262.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: #ADD8E6;" text="Bénificiéaire" textFill="#fcfcfcfc">
+                                 <font>
+                                    <Font name="Bodoni MT Black" size="18.0" />
+                                 </font>
+                              </Label>
+                              <StackPane VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Circle fill="#1f93ff06" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label styleClass="labelCercle" stylesheets="@style.css" text="Bénificiares">
+                                       <StackPane.margin>
+                                          <Insets top="60.0" />
+                                       </StackPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="labelclient" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="54.13671875">
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </StackPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="262.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: #009688;" text="Projet financé" textAlignment="CENTER" textFill="#fcfcfcfc">
+                                 <font>
+                                    <Font name="Bodoni MT Black" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="206.0" prefWidth="262.0">
+                                 <children>
+                                    <ProgressIndicator fx:id="ProgressIndicator" layoutX="51.0" layoutY="23.0" prefHeight="158.0" prefWidth="163.0" progress="0.25">
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                    </ProgressIndicator>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="560.0" layoutY="300.0" prefHeight="225.0" prefWidth="450.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <VBox>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="183.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="image4" fitHeight="155.0" fitWidth="200.0" pickOnBounds="true">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="160.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#009688" glyphName="MONEY" size="18">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <JFXTextField fx:id="text4" editable="false" focusColor="#405aa800" prefHeight="25.0" prefWidth="116.0" unFocusColor="#4d4d4d00">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font></JFXTextField>
+                                    <JFXButton fx:id="btnExplorer4" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" onAction="#ExplorerProjet" prefHeight="25.0" prefWidth="135.0" text="Visualiser" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="EYE" size="15" text="" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="20.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" top="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <JFXTextArea fx:id="desc4" editable="false" focusColor="#405aa800" prefHeight="190.0" prefWidth="200.0" styleClass="txtArea" stylesheets="@style.css" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin></JFXTextArea>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
